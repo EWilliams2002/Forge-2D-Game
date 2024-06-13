@@ -6,21 +6,18 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public string homeScene;
-    public string playScene;
+    
     public GameObject OptionsScreen;
     
     
 
     // Start is called before the first frame update
-    public void StartGame()
+    public void LoadHome()
     {
         SceneManager.LoadScene(homeScene);
     }
     
-    public void PlayGame()
-    {
-        SceneManager.LoadScene(playScene);
-    }
+    
     
     public void OpenOptions()
     {

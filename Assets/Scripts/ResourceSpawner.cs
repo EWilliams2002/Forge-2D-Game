@@ -11,6 +11,9 @@ using UnityEngine;
 public class ResourceSpawner : MonoBehaviour
 {
     public PolygonCollider2D polygonCollider;
+    public GameObject SpawnArea;
+    public GameObject ItemPref;
+
     public int numberRandomPositions = 10;
  
     void Start()
@@ -26,9 +29,7 @@ public class ResourceSpawner : MonoBehaviour
             Vector2 rndPointInside = polygonCollider.ClosestPoint(new Vector2(rndPoint2D.x, rndPoint2D.y));
             if (rndPointInside.x == rndPoint2D.x && rndPointInside.y == rndPoint2D.y)
             {
-                GameObject rndCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                rndCube.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-                rndCube.transform.position = rndPoint2D;
+                Instantiate(ItemPref, rndPoint2D, Quaternion.identity);
                 i++;
             }
         }
